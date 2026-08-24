@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Guests extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'kode_buku',
+        'judul',
+        'pengarang',
+        'penerbit',
+        'stok',
+
+    ];
+
+    public function loans()
+    {
+        return $this->hasMany(Loan::class, 'buku_id', 'id');
+    }
+}
