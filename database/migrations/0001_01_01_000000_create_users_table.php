@@ -12,7 +12,9 @@ return new class extends Migration
             $table->integer('id', true)->primary();
             $table->string('name', 32);
             $table->string('email', 128)->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 255);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

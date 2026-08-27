@@ -1,9 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('title', 'Login Page - Library')
 
 @section('content')
 
+<div style="background-color: #FFFDD0; min-height: 100vh;" class="w-100 d-flex align-items-center justify-content-center">
     <div class="container">
 
         <!-- Outer Row -->
