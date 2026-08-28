@@ -35,7 +35,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="email" class="col-md-4 col-form-label ms-2">{{ __('Password :') }}</label>
+                                            <label for="password" class="col-md-4 col-form-label ms-2">{{ __('Password :') }}</label>
                                             <input type="password" name="password" id="password" class="form-control rounded-pill py-2 px-3 form-control-user @error('password') is-invalid @enderror" placeholder="Enter Your Password...">
 
                                             @error('password')

@@ -23,4 +23,8 @@ Route::group([
        // Route for Dashboard page
        Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
        Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+
+       // Route for Profile page
+       Route::get('/profile', [App\Http\Controllers\ProfileController::class,'index'])->name('profile.index');
+       Route::post('/profile', [App\Http\Controllers\ProfileController::class,'save'])->name('profile.save');
 });
