@@ -19,7 +19,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('admin.admin.index') }}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Data Admin</span></a>
             </li>

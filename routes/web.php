@@ -27,4 +27,7 @@ Route::group([
        // Route for Profile page
        Route::get('/profile', [App\Http\Controllers\ProfileController::class,'index'])->name('profile.index');
        Route::post('/profile', [App\Http\Controllers\ProfileController::class,'save'])->name('profile.save');
+
+       //Route for Admin page
+       Route::resource('/admin', App\Http\Controllers\AdminController::class);
 });
