@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->integer('id', true)->primary();
             $table->string('kode_buku', 50)->unique();
-            $table->string('judul', 255);
+            $table->string('judul', 255)->nullable();
             $table->string('pengarang', 150);
             $table->string('penerbit', 100);
             $table->integer('stok');

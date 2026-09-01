@@ -25,7 +25,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('admin.book.index') }}">
                     <i class="fas fa-fw fa-user-check"></i>
                     <span>Data Buku</span></a>
             </li>

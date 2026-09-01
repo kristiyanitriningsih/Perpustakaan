@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
-@section('title', 'Admin page')
+@section('title', 'Buku page')
 
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4 px-3 pt-3">
-        <h1 class="h3 mb-0 text-gray-800">Halaman Admin </h1>
+        <h1 class="h3 mb-0 text-gray-800">Halaman Data Buku</h1>
     </div>
 
     <div class="card">
         <div class="card-header d-flex align-items-center justify-content-between">
-            <h5 class="card-title mb-0">Data Admin</h5>
-            <a href="{{ route('admin.admin.create') }}" class="btn btn" style="background-color : #FFFDD0">
+            <h5 class="card-title mb-0">Data Buku</h5>
+            <a href="{{ route('admin.book.create') }}" class="btn btn" style="background-color : #FFFDD0">
                 <span class="fa fa-plus-circle mr-2"></span>
-                <span>Tambah Admin</span>
+                <span>Tambah Buku Baru</span>
             </a>
         </div>
 
@@ -20,24 +20,26 @@
             <table class="table table-striped table-hover datatable">
                 <thead>
                     <tr>
-                        <th>NAMA</th>
-                        <th>EMAIL</th>
+                        <th>NO</th>
+                        <th>KODE BUKU</th>
+                        <th>STOK</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($user as $user)
+                    @foreach ($book as $book)
                         <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
+                            <td>{{ $book->no }}</td>
+                            <td>{{ $book->kode_buku }}</td>
+                            <td>{{ $book->stok }}</td>
                             <td>
-                                <a href="{{ route('admin.admin.show', $user->id) }}" class="btn btn-link text-secondary p-0 mx-2">
+                                <a href="{{ route('admin.book.show', $book->id) }}" class="btn btn-link text-secondary p-0 mx-2">
                                     <span class="fa fa-search"></span>
                                 </a>
-                                <a href="{{ route('admin.admin.edit', $user->id) }}" class="btn btn-link p-0 mx-2">
+                                <a href="{{ route('admin.book.edit', $book->id) }}" class="btn btn-link p-0 mx-2">
                                     <span class="fa fa-edit"></span>
                                 </a>
-                               <form action="{{ route('admin.admin.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return">
+                               <form action="{{ route('admin.book.destroy', $book->id) }}" method="POST" class="d-inline" onsubmit="return">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-link p-0 mx-2 text-danger" style="background-color : #FFFDD0">

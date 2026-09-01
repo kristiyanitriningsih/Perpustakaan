@@ -30,4 +30,7 @@ Route::group([
 
        //Route for Admin page
        Route::resource('/admin', App\Http\Controllers\AdminController::class);
+
+       //Route for Data Buku page
+       Route::resource('/book', App\Http\Controllers\BookController::class);
 });
