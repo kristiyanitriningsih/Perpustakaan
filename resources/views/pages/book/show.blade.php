@@ -8,6 +8,10 @@
      
     <table class="table table-bordered">
         <tr>
+            <th>No</th>
+            <th>{{ $book->no }}</th>
+        </tr>
+        <tr>
             <th>Kode Buku</th>
             <th>{{ $book->kode_buku }}</th>
         </tr>

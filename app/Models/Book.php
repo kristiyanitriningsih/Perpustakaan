@@ -10,12 +10,12 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
+        'no',
         'kode_buku',
         'judul',
         'pengarang',
         'penerbit',
         'stok',
-
     ];
 
     public function loans()

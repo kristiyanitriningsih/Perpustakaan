@@ -30,7 +30,20 @@
                         @csrf
                         @method('PUT')
 
-                         <div class="card-body">
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label for="no" class="form-label">No</label>
+                            <input type="text" name="no" id="no" value="{{ old('no') }}" class="form-control @error('no') is-invalid @enderror">
+                        
+                        @error('no')
+                            <div class="invalid-feedback d-block">
+                                <span>{{ $message }}</span>
+                            </div>
+                        @enderror
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
                         <div class="form-group mb-3">
                             <label for="kode_buku" class="form-label">Kode Buku</label>
                             <input type="string" name="kode_buku" id="kode_buku" value="{{ old('kode_buku') }}" class="form-control @error('kode_buku') is-invalid @enderror">

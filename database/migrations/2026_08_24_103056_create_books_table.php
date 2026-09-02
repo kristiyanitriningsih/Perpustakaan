@@ -15,8 +15,8 @@ return new class extends Migration
             $table->integer('id', true)->primary();
             $table->string('kode_buku', 50)->unique();
             $table->string('judul', 255)->nullable();
-            $table->string('pengarang', 150);
-            $table->string('penerbit', 100);
+            $table->string('pengarang', 150)->nullable();
+            $table->string('penerbit', 100)->nullable();
             $table->integer('stok');
             $table->timestamps();
         });

@@ -29,7 +29,7 @@
                 <tbody>
                     @foreach ($book as $book)
                         <tr>
-                            <td>{{ $book->no }}</td>
+                            <td>{{ $book->id }}</td>
                             <td>{{ $book->kode_buku }}</td>
                             <td>{{ $book->stok }}</td>
                             <td>
