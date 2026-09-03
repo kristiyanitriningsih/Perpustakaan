@@ -31,7 +31,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('admin.loan.index') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Data Peminjaman</span></a>
             </li>
