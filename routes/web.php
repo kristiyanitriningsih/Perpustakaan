@@ -34,6 +34,9 @@ Route::group([
        //Route for Data Buku page
        Route::resource('/book', App\Http\Controllers\BookController::class);
 
-       //Route for Loan page
+       //Route for Data Peminjaman page
        Route::resource('/loan', App\Http\Controllers\LoanController::class);
+
+       //Route for Laporan Peminjaman page
+       Route::resource('/laporan', App\Http\Controllers\LaporanController::class);
 });

@@ -37,7 +37,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('admin.laporan.index') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Data Laporan</span></a>
             </li>
