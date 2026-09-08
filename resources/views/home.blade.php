@@ -1,23 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<h4>Selamat Datang!</h4>
+<h5>Berikut daftar buku yang sering dipinjam di perpustakaan :</h5>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+<div class="card-body">
+            <table class="table table-striped table-hover datatable">
+                <thead>
+                    <tr>
+                        <th>JUDUL BUKU</th>
+                        <th>TOTAL PINJAM</th>
+                        <th>GENRE</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
-    </div>
-</div>
 @endsection
