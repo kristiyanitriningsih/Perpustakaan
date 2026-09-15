@@ -12,9 +12,9 @@
             <hr class="sidebar-divider my-0">
           
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('book2.index') }}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Data Buku</span></a>
+                    <span>Data Buku Perpustakan</span></a>
             </li>
 
             <li class="nav-item active">

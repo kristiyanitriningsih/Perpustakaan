@@ -8,7 +8,11 @@ Route::get('/', function () {
     return view('pages.dashboard2.app');
 });
 
-// Route::get('/dashboard2', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard2');
+// Route for Dashboard page
+Route::get('/dashboard2', [App\Http\Controllers\Book2Controller::class, 'index'])->name('dashboard2');
+
+// Route for Data Buku Pengunjung page
+Route::get('/book2', [App\Http\Controllers\Book2Controller::class, 'index'])->name('book2.index');
 
 Auth::routes([
     'register' => false,
@@ -23,7 +27,6 @@ Route::group([
     'middleware' => 'auth',
     ], function () {
        // Route for Dashboard page
-    //    Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
        Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
        // Route for Profile page
