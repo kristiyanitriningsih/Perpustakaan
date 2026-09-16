@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('pages.dashboard2.app')
 
 @section('title', 'Data Buku page')
 

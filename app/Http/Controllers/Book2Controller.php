@@ -13,9 +13,9 @@ class Book2Controller extends Controller
         return view('pages.book2.index', compact('book'));
     }
 
-    public function show(string $id)
-    {
-        $book = Book::findOrFail($id);
-        return view('pages.book2.show', compact('book'));
-    }
+    // public function show(string $id)
+    // {
+    //     $book = Book::findOrFail($id);
+    //     return view('pages.book2.show', compact('book'));
+    // }
 }
