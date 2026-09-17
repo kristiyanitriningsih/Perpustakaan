@@ -16,7 +16,7 @@
             <table class="table table-striped table-hover datatable">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>NO</th>
                         <th>FOTO</th>
                         <th>KODE BUKU</th>
                         <th>JUDUL</th>
@@ -51,7 +51,7 @@
                             <td>{{ $book->penerbit }}</td>
                             <td>{{ $book->stok }}</td>
                             <td>
-                                <a href="{{ route('admin.book.show', $book->id) }}" class="btn btn-link text-secondary p-0 mx-2">
+                                <a href="{{ route('book2.show', $book->id) }}" class="btn btn-link text-secondary p-0 mx-2">
                                     <span class="fa fa-search"></span>
                                 </a>
                             </td>
