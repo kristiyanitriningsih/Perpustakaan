@@ -14,6 +14,7 @@ Route::get('/dashboard2', [App\Http\Controllers\Book2Controller::class, 'index']
 // Route for Data Buku Pengunjung page
 Route::get('/book2', [App\Http\Controllers\Book2Controller::class, 'index'])->name('book2.index');
 Route::get('/book2/{id}', [App\Http\Controllers\Book2Controller::class, 'show'])->name('book2.show');
+Route::get('/loan2', [App\Http\Controllers\Loan2Controller::class, 'index'])->name('loan2.index');
 
 Auth::routes([
     'register' => false,

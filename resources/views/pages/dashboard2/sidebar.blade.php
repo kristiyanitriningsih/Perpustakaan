@@ -18,7 +18,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('loan2.index') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Form Peminjaman</span></a>
             </li>
