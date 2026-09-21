@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->integer('id', true)->primary();
-            $table->integer('pengunjung_id');
-            $table->foreign('pengunjung_id')->references('id')->on('visitors')->cascadeOnDelete();
+            $table->string('no_telp');
+            // $table->foreign('pengunjung_id')->references('id')->on('visitors')->cascadeOnDelete();
             $table->integer('buku_id');
             $table->foreign('buku_id')->references('id')->on('books')->cascadeOnDelete();
             $table->date('tgl_pinjam');

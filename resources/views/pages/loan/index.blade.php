@@ -17,9 +17,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>PENGUNJUNG ID</th>
+                        <th>NOMOR TELEPHONE</th>
                         <th>JUDUL BUKU</th>
-                        <th>TGL PINJAM - KEMBALI</th>
+                        <th>TANGGALL PINJAM</th>
+                        <th>TANGGAL KEMBALI</th>
                         <th>STATUS</th>
                         <th>AKSI</th>
                     </tr>
@@ -28,9 +29,10 @@
                     @foreach ($loan as $loan)
                         <tr>
                             <td>{{ $loan->id }}</td>
-                            <td>{{ $loan->pengunjung_id }}</td>
+                            <td>{{ $loan->no_telp }}</td>
                             <td>{{ $loan->judul }}</td>
-                            <td>{{ $loan->tgl_pinjam }} - {{ $loan->tgl_kembali }}</td>
+                            <td>{{ $loan->tgl_pinjam }}</td>
+                            <td>{{ $loan->tgl_kembali }}</td>
                             <td>{{ $loan->status }}</td>
                             <td>
                                 <a href="{{ route('admin.loan.show', $loan->id) }}" class="btn btn-link text-secondary p-0 mx-2">

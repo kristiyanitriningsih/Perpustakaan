@@ -18,12 +18,12 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'kode_buku'    => fake()->unique()->bothify('???-###'),
-            'judul'        => fake()->sentence(3),
-            'pengarang'    =>fake()->name(),
-            'penerbit'     =>fake()->company(),
-            'stok'         =>fake()->numberBetween(1, 100),
-        ];
+        // return [
+        //     'kode_buku'    => fake()->unique()->bothify('???-###'),
+        //     'judul'        => fake()->sentence(3),
+        //     'pengarang'    =>fake()->name(),
+        //     'penerbit'     =>fake()->company(),
+        //     'stok'         =>fake()->numberBetween(1, 100),
+        // ];
     }
 }

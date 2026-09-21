@@ -11,6 +11,7 @@ class Loan extends Model
 
     protected $fillable = [
         'pengunjung_id',
+        'no_telp',
         'buku_id',
         'tgl_pinjam',
         'tgl_kembali',

@@ -12,16 +12,20 @@
             <th>{{ $loan->id }}</th>
         </tr>
         <tr>
-            <th>Pengunjung Id</th>
-            <th>{{ $loan->pengunjung_id }}</th>
+            <th>Nomor Telephone</th>
+            <th>{{ $loan->no_telp }}</th>
         </tr>
         <tr>
             <th>Judul Buku</th>
             <th>{{ $loan->judul }}</th>
         </tr>
         <tr>
-            <th>Tgl Pinjam - Kembali</th>
-            <th>{{ $loan->tgl_pinjam }} - {{ $loan->tgl_kembali }}</th>
+            <th>Tanggal Pinjam</th>
+            <th>{{ $loan->tgl_pinjam }}</th>
+        </tr>
+        <tr>
+            <th>Tanggal Kembali</th>
+            <th>{{ $loan->tgl_kembali }}</th>
         </tr>
         <tr>
             <th>Status</th>

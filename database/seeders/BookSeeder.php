@@ -13,6 +13,12 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
-        Book::factory()->count(5)->create();
+        \App\Models\Book::create([
+            'kode_buku' => '001',
+            'judul' => 'Pulang',
+            'pengarang' => 'Tere Liye',
+            'penerbit' => 'Republika',
+            'stok' => 10,
+         ]);
     }
 }

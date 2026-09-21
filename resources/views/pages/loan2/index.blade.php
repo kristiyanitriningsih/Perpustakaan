@@ -28,20 +28,19 @@
                         </div>
                     @endif
 
-                    {{-- <form action="{{ route('guest.store') }}" method="POST"> --}}
+                    <form action="{{ route('admin.loan.store') }}" method="POST">
                         @csrf
 
                         <div class="mb-3">
-                            <label>Nomor Pengunjung</label>
-                            <input type="varchar" name="no_pengunjung" class="form-control" value="{{ old('no_pengunjung') }}">
+                            <label>Nama Lengkap</label>
+                            <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">
                         </div>
 
-                        <!-- Nomor Telepon dan Email dalam satu baris -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label>Nama Lengkap</label>
-                                    <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">
+                                    <label>Nomor Telephone</label>
+                                    <input type="integer" name="no_telp" class="form-control" value="{{ old('no_telp') }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -52,44 +51,34 @@
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label>Tanggal Pinjam & Tanggal Kembali</label>
-                            <textarea name="tgl_pinjam" class="form-control" rows="2">{{ old('tgl_pinjam') }}</textarea>
-                            <textarea name="tgl_kembali" class="form-control" rows="2">{{ old('tgl_kembali') }}</textarea>
-                        </div>
-
-                        <!-- Karyawan dan Asal Instansi dalam satu baris -->
-                        {{-- <div class="row">
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label>Karyawan yg Ditemui</label>
-                                    <select name="employee_id" class="form-control">
-                                        <option value="">-- Pilih Karyawan --</option>
-                                        @foreach($employees as $employee)
-                                            <option value="{{ $employee->id }}" {{ old('employee_id') == $employee->id ? 'selected' : '' }}>
-                                                {{ $employee->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
+                                    <label>Tanggal Pinjam</label>
+                                    <input type="date" name="tgl_pinjam" class="form-control" value="{{ old('tgl_pinjam') }}">
                                 </div>
-                            </div> --}}
-                            {{-- <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label>Asal Instansi</label>
-                                    <input type="text" name="asal_instansi" class="form-control" value="{{ old('asal_instansi') }}">
+                                    <label>Tanggal Kembali</label>
+                                    <input type="date" name="tgl_kembali" class="form-control" value="{{ old('tgl_kembali') }}">
                                 </div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label>Keperluan</label>
-                            <textarea name="keperluan" class="form-control" rows="2">{{ old('keperluan') }}</textarea>
-                        </div> --}}
-
-                        <!-- Button Full Width - PAKAI CSS LANGSUNG -->
-                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-                            <i class="fas fa-save me-2"></i> Pinjam
-                        </button>
+                            <label>Jumlah</label>
+                            <input type="varchar" name="jumlah" class="form-control" value="{{ old('jumlah') }}">
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 50%;">
+                                <a href="{{ route('book2.index') }}" class="fas fa-times me-2"></a> Batal
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 50%;">
+                                <i class="fas fa-save me-2"></i> Pinjam
+                            </button>
+                        </div>
 
                     </form>
 
