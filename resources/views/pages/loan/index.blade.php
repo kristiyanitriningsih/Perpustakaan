@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{ $loan->id }}</td>
                             <td>{{ $loan->no_telp }}</td>
-                            <td>{{ $loan->judul }}</td>
+                            <td>{{ $loan->book->judul ?? '_' }}</td>
                             <td>{{ $loan->tgl_pinjam }}</td>
                             <td>{{ $loan->tgl_kembali }}</td>
                             <td>{{ $loan->status }}</td>

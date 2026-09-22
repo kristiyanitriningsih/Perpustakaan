@@ -10,7 +10,6 @@ class Loan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'pengunjung_id',
         'no_telp',
         'buku_id',
         'tgl_pinjam',
@@ -20,8 +19,8 @@ class Loan extends Model
 
     ];
 
-    public function books()
+    public function book()
     {
-        return $this->belongsTo(Book::class, 'buku_id', 'id');
+        return $this->belongsTo(Book::class, 'buku_id');
     }
 }

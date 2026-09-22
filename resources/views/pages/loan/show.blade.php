@@ -33,6 +33,6 @@
         </tr>
     </table>
 
-    <a href="{{ route('admin.loan.index', $book->id) }}" class="btn btn mb-3" style="background-color : #FFFDD0">Kembali</a>
+    <a href="{{ route('admin.loan.index') }}" class="btn btn mb-3" style="background-color : #FFFDD0">Kembali</a>
 </div>
 @endsection
