@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
 {
     public function index()
     {
-        $bulan = ['JUL', 'AGS', 'SEPT', 'OKT', 'NOV', 'DES', 'JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN'];
-        $pengunjung = [710, 986, 878, 1132, 957, 152, 792, 161, 93, 89, 0, 0];
+        $laporan = Loan::select(
+        DB::raw("DATE_FORMAT(tgl_pinjam, '%b') as bulan"),
+        DB::raw("MONTH(tgl_pinjam) as bulan_num"),
+        DB::raw("COUNT(*) as total")
+    )
+    ->groupBy('bulan_num', 'bulan')
+    ->orderBy('bulan_num', 'ASC')
+    ->get();
 
-        
-        return view('pages.laporan.index', compact('bulan', 'pengunjung'));
+    return view('pages.laporan.index', compact('laporan'));
+
     }
 }

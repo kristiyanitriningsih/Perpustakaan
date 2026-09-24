@@ -72,10 +72,10 @@
                         </div>
                         
                         <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg" style="width: 50%;">
-                                <a href="{{ route('book2.index') }}" class="fas fa-times me-2"></a> Batal
+                            <button type="submit" class="btn btn-lg" style="width: 50%; background-color: #FFF4BD;">
+                                <a href="{{ route('book2.index') }}" class="fas fa-times me-2" style="color: inherit;"></a> Batal
                             </button>
-                            <button type="submit" class="btn btn-primary btn-lg" style="width: 50%;">
+                            <button type="submit" class="btn btn-lg" style="width: 50%; background-color: #FFF4BD;">
                                 <i class="fas fa-save me-2"></i> Pinjam
                             </button>
                         </div>

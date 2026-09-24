@@ -17,6 +17,7 @@ class Book extends Model
         'pengarang',
         'penerbit',
         'stok',
+        'genre',
     ];
 
     public function loan()

@@ -3,7 +3,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-book"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Perpustakaan</div>
             </a>
@@ -14,31 +14,31 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-home"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin.admin.index') }}">
-                    <i class="fas fa-fw fa-users"></i>
+                    <i class="fas fa-fw fa-user-shield"></i>
                     <span>Data Admin</span></a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin.book.index') }}">
-                    <i class="fas fa-fw fa-user-check"></i>
+                    <i class="fas fa-fw fa-book"></i>
                     <span>Data Buku</span></a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin.loan.index') }}">
-                    <i class="fas fa-fw fa-user"></i>
+                    <i class="fas fa-fw fa-handshake"></i>
                     <span>Data Peminjaman</span></a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin.laporan.index') }}">
-                    <i class="fas fa-fw fa-user"></i>
+                    <i class="fas fa-fw fa-file-alt"></i>
                     <span>Data Laporan Peminjaman</span></a>
             </li>
 

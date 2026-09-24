@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->integer('id', true)->primary();
+            $table->string('foto', 255)->nullable();
             $table->string('kode_buku', 50)->unique();
             $table->string('judul', 255)->nullable();
             $table->string('pengarang', 150)->nullable();
             $table->string('penerbit', 100)->nullable();
             $table->integer('stok');
+            $table->string('genre', 100)->nullable();
             $table->timestamps();
         });
     }

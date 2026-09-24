@@ -13,11 +13,6 @@ class LoanController extends Controller
     $loan = Loan::with('book')->get();
     return view('pages.loan.index', compact('loan'));
     }
-    // public function index()
-    // {
-    //     $loan = Loan::all();
-    //     return view('pages.loan.index', compact('loan'));
-    // }
 
     public function store(Request $request)
     {
@@ -64,26 +59,7 @@ class LoanController extends Controller
     // 7. Kembali ke Halaman dengan Pesan Sukses
     return redirect()->back()->with('success', 'Data peminjaman berhasil ditambahkan!');
     }
-    // public function store(Request $request)
-    // {
-    //      // 1. Validasi Input Data
-    //     $validated = $request->validate([
-    //         'no_telp'          => 'required|string|max:20',
-    //         'kode_buku'        => 'required|exists:books,kode_buku',
-    //         'tgl_pinjam'       => 'nullable|date',
-    //         'tgl_kembali'      => 'required|date|after_or_equal:tgl_pinjam',
-    //         'jumlah'           => 'required|integer',
-    //     ]);
-
-    //     $validated['status'] = 'dipinjam';
-
-    //     // 2. Simpan Data ke Database
-    //     Loan::create($validated);
-
-    //     // 3. Kembali ke Halaman dengan Pesan Sukses
-    //     return redirect()->back()->with('success', 'Data peminjaman berhasil ditambahkan!');
-    // }
-
+   
     public function show(string $id)
     {
         $loan = Loan::findOrFail($id);
@@ -95,6 +71,6 @@ class LoanController extends Controller
         $loan = Loan::findOrFail($id);
         $loan->delete();
 
-        return redirect()->route('admin.loan.index')->with('success', 'Tamu berhasil dihapus');
+        return redirect()->route('admin.loan.index')->with('success', 'Data peminjaman berhasil di hapus');
     }
 }

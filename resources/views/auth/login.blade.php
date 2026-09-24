@@ -37,7 +37,8 @@
                                         <div class="form-group">
                                             <label for="password" class="col-md-4 col-form-label ms-2">{{ __('Password :') }}</label>
                                             <input type="password" name="password" id="password" class="form-control rounded-pill py-2 px-3 form-control-user @error('password') is-invalid @enderror" placeholder="Enter Your Password...">
-
+                                            <i class="fas fa-eye" id="toggleIcon" onclick="togglePassword()" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #6c757d; z-index: 10;"></i>
+                                            
                                             @error('password')
                                                 <div class="invalid-feedback d-block">
                                                     {{ $message }}

@@ -30,7 +30,7 @@ class BookController extends Controller
             'stok' => $request->stok,
         ]);
 
-        return redirect()->route('admin.book.index')->with('success', 'Data pegawai berhasil ditambahkan');
+        return redirect()->route('admin.book.index')->with('success', 'Data buku berhasil ditambahkan');
     }
 
     public function show(string $id)

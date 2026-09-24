@@ -41,7 +41,7 @@ class AdminController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('admin.admin.index')->with('success', 'Create new admin is successfully');
+        return redirect()->route('admin.admin.index')->with('success', 'Admin baru berhasil ditambahkan');
     }
 
     /**
@@ -89,7 +89,7 @@ class AdminController extends Controller
         // 2. Sekarang $user sudah ada dan bisa di-update
         $user->update($data);
 
-        return redirect()->route('admin.admin.index')->with('success', 'Admin updated successfully');
+        return redirect()->route('admin.admin.index')->with('success', 'Admin berhasil di perbarui');
     }
 
     /**

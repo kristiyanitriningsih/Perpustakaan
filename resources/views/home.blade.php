@@ -13,6 +13,16 @@
                         <th>GENRE</th>
                     </tr>
                 </thead>
+
+                <tbody>
+                    @foreach($bukuTerfavorit as $book)
+                    <tr>
+                        <td>{{ $book->judul }}</td>
+                        <td>{{ $book->loan_count }}</td>
+                        <td>{{ $book->genre }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
 @endsection

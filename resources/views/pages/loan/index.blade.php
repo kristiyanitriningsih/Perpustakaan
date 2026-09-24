@@ -38,7 +38,7 @@
                                 <a href="{{ route('admin.loan.show', $loan->id) }}" class="btn btn-link text-secondary p-0 mx-2">
                                     <span class="fa fa-search"></span>
                                 </a>
-                               <form action="{{ route('admin.loan.destroy', $loan->id) }}" method="POST" class="d-inline" onsubmit="return">
+                               <form action="{{ route('admin.loan.destroy', $loan->id) }}" method="POST" class="d-inline" onsubmit="return handleDestroy(event)">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-link p-0 mx-2 text-danger" style="background-color : #FFFDD0">
@@ -56,10 +56,11 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}">
 @endpush
 
 @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script type="text/javascript">
@@ -68,15 +69,15 @@
     function handleDestroy(url) {
         Swal.fire({
             title: "Apakah Anda Yakin!",
-            text: "Kamu Tidak Bisa Mengembalikan Data Yang telah di hapus!"
-            icon: "Warning",
-            showCancelButton: "Ya Hapus",
-            cancelbuttonText: "Batal",
+            text: "Kamu Tidak Bisa Mengembalikan Data Yang telah di hapus!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Ya Hapus",
+            cancelButtonText: "Batal",
         }).then((result) => {
             if (result.isConfirmed) {
                 $('#form-destroy').attr('action', url);
                 $('#form-destroy').submit();
-                
             }
         });
     }
