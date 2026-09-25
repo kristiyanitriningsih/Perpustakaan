@@ -5,6 +5,15 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
+                    <style>
+                        .dropdown-item:hover, 
+                        .dropdown-item:focus, 
+                        .dropdown-item:active {
+                        background-color: #FFFDD0 !important;
+                        color: #333333 !important;
+                        }
+                    </style>
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->

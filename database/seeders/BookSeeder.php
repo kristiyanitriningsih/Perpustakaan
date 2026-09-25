@@ -19,6 +19,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Republika Penerbit',
             'stok' => 10,
+            'genre' => 'Aksi',
+            'foto' => 'pulang.jpg',
         ]);
 
         Book::create([
@@ -27,6 +29,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Andrea Hirata',
             'penerbit' => 'Gramedia Pustaka Utama',
             'stok' => 8,
+            'genre' => 'Fiksi Inspiratif',
+            'foto' => 'laskarpelangi.jpg',
         ]);
 
         Book::create([
@@ -35,6 +39,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Republika Penerbit',
             'stok' => 6,
+            'genre' => 'Fantasi',
+            'foto' => 'bumi.jpg',
         ]);
 
         Book::create([
@@ -43,6 +49,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Republika Penerbit',
             'stok' => 6,
+            'genre' => 'Sci-Fi',
+            'foto' => 'hujan.png',
         ]);
 
         Book::create([
@@ -51,6 +59,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Republika Penerbit',
             'stok' => 6,
+            'genre' => 'Fantasi',
+            'foto' => 'bulan.jpg',
         ]);
 
         Book::create([
@@ -59,6 +69,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka Utama',
             'stok' => 8,
+            'genre' => 'Fantasi',
+            'foto' => 'matahari.jpg',
         ]);
 
         Book::create([
@@ -67,6 +79,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka Utama',
             'stok' => 5,
+            'genre' => 'Fantasi',
+            'foto' => 'bintang.jpg',
         ]);
 
         Book::create([
@@ -75,6 +89,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka Utama',
             'stok' => 7,
+            'genre' => 'Fantasi',
+            'foto' => 'cerosdanbatozar.jpg',
         ]);
 
         Book::create([
@@ -83,6 +99,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka Utama',
             'stok' => 10,
+            'genre' => 'Fantasi',
+            'foto' => 'komet.jpg',
         ]);
 
         Book::create([
@@ -91,6 +109,8 @@ class BookSeeder extends Seeder
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka Utama',
             'stok' => 4,
+            'genre' => 'Fantasi',
+            'foto' => 'kometminor.jpg',
         ]);
     }
 }

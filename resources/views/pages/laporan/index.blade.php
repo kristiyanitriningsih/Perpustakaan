@@ -20,7 +20,7 @@
        
         <div class="card mb-4 shadow-sm">
             <div class="card-header bg-white py-3">
-                <h5 class="m-0 font-weight-bold text-primary">Grafik Laporan Peminjaman</h5>
+                <h5 class="m-0 font-weight-bold">Grafik Laporan Peminjaman</h5>
             </div>
             <div class="card-body">
                 @foreach($laporan as $item)
@@ -30,7 +30,7 @@
                         <span class="fw-bold">{{ number_format($item->total) }} Peminjaman</span>
                     </div>
                     <div class="progress" style="height: 12px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: {{ min(($item->total / 1000) * 100, 100) }}%;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="background-color: #000000; width: {{ min(($item->total / 1000) * 100, 100) }}%;">
                         </div>
                     </div>
                 </div>

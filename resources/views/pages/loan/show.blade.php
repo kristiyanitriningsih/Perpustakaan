@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <th>Judul Buku</th>
-            <th>{{ $loan->judul }}</th>
+            <th>{{ $loan->book->judul ?? '_' }}</th>
         </tr>
         <tr>
             <th>Tanggal Pinjam</th>

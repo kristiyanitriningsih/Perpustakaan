@@ -40,7 +40,7 @@
                             <td>{{ $book->id }}</td>
                             <td>
                                 @if ($book->foto)
-                                    <img src="{{ asset('storage/uploads/' . $book->foto) }}" width="80px">
+                                    <img src="{{ asset('storage/uploads/' . $book->foto) }}" width="50px">
                                 @else
                                     <em class="text-muted">Empty Image</em>
                                 @endif

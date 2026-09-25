@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 @extends('layouts.auth')
 
 @section('title', 'Login Page - Library')
@@ -26,7 +28,7 @@
 
                                         <div class="mb-2 form-group">
                                             <label for="email" class="col-md-4 col-form-label ms-2">{{ __('Email :') }}</label>
-                                            <input type="email" name="email" id="email" class="form-control rounded-pill py-2 px-3 form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Enter Email...">
+                                            <input type="email" name="email" id="email" class="form-control rounded-pill py-2 px-3 form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Enter Email..." onfocus="this.style.borderColor='#e6e3ba'; this.style.boxShadow='0 0 0 0.25rem rgba(255, 253, 208, 0.8)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
 
                                             @error('email')
                                                 <div class="invalid-feedback d-block">
@@ -36,16 +38,18 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="password" class="col-md-4 col-form-label ms-2">{{ __('Password :') }}</label>
-                                            <input type="password" name="password" id="password" class="form-control rounded-pill py-2 px-3 form-control-user @error('password') is-invalid @enderror" placeholder="Enter Your Password...">
-                                            <i class="fas fa-eye" id="toggleIcon" onclick="togglePassword()" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #6c757d; z-index: 10;"></i>
-                                            
+                                            <div style="position: relative;">
+                                                <input type="password" name="password" id="password" class="form-control rounded-pill py-2 px-3 form-control-user @error('password') is-invalid @enderror" placeholder="Enter Your Password..." onfocus="this.style.borderColor='#e6e3ba'; this.style.boxShadow='0 0 0 0.25rem rgba(255, 253, 208, 0.8)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
+                                                <i class="fas fa-eye" id="toggleIcon" onclick="togglePassword()" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #6c757d; z-index: 10;"></i>
+                                            </div>
+
                                             @error('password')
                                                 <div class="invalid-feedback d-block">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
                                         </div><br>
-                                        <button type="submit" class="btn rounded-pill w-100 py-2 btn-user btn-block" style="background-color : #FFFDD0">
+                                        <button type="submit" class="btn rounded-pill w-100 py-2 btn-user btn-block shadow" style="background-color : #FFFDD0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                                             <span class="fa fa-sign-in-alt"></span>Login Masuk
                                         </button>
                                     </form>
@@ -60,3 +64,26 @@
         <div>
             
 </div>
+
+<script>
+function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    if (passwordInput.type === 'password') {
+        // Ubah tipe dari password ke text agar tulisannya terlihat
+        passwordInput.type = 'text';
+        // Ubah ikon mata menjadi mata dicoret (eye-slash)
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    } else {
+        // Kembalikan ke password agar jadi titik-titik lagi
+        passwordInput.type = 'password';
+        // Kembalikan ikon mata biasa
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    }
+}
+</script>
+
+@endsection

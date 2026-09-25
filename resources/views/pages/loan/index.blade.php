@@ -38,10 +38,10 @@
                                 <a href="{{ route('admin.loan.show', $loan->id) }}" class="btn btn-link text-secondary p-0 mx-2">
                                     <span class="fa fa-search"></span>
                                 </a>
-                               <form action="{{ route('admin.loan.destroy', $loan->id) }}" method="POST" class="d-inline" onsubmit="return handleDestroy(event)">
+                               <form id="delete-form-{{ $loan->id }}" action="{{ route('admin.loan.destroy', $loan->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-link p-0 mx-2 text-danger" style="background-color : #FFFDD0">
+                                    <button type="button" class="btn btn-link p-0 mx-2 text-danger" style="background-color : #FFFDD0" onclick="confirmDelete({{ $loan->id }})">
                                         <span class="fa fa-trash"></span>
                                     </button>
                                 </form>
@@ -63,33 +63,48 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    
     <script type="text/javascript">
         $('.datatable').dataTable();
 
-    function handleDestroy(url) {
-        Swal.fire({
-            title: "Apakah Anda Yakin!",
-            text: "Kamu Tidak Bisa Mengembalikan Data Yang telah di hapus!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Ya Hapus",
-            cancelButtonText: "Batal",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $('#form-destroy').attr('action', url);
-                $('#form-destroy').submit();
-            }
-        });
-    }
+        function confirmDelete(id) {
+            Swal.fire({
+                title: "Apakah Anda Yakin!",
+                text: "Kamu Tidak Bisa Mengembalikan Data Yang telah di hapus!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya Hapus",
+                cancelButtonText: "Batal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('delete-form-' + id).submit();
+                }
+            });
+        }
     </script>
+
     @if (Session::has('success'))
         <script>
             Swal.fire({
                 title: "Berhasil",
-                text: "{{ Session::get('success')}}",
+                text: "{{ Session::get('success') }}",
                 icon: "success",
-                timer: "2000",
+                timer: 2000,
                 showConfirmButton: false
+            });
+        </script>
+    @endif
+
+    @if (Session::has('error'))
+        <script>
+            Swal.fire({
+                title: "Gagal!",
+                text: "{{ Session::get('error') }}",
+                icon: "error",
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK"
             });
         </script>
     @endif
